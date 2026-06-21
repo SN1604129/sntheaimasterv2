@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 // ── Shared helpers ─────────────────────────────────────────────────────────────
 
 function getKey() {
-  return sessionStorage.getItem('sn_openai_key') || ''
+  return sessionStorage.getItem('sn_openai_key') || import.meta.env.VITE_OPENAI_KEY || ''
 }
 
 async function callOpenAI(systemPrompt, userContent, key) {
