@@ -1,0 +1,7 @@
+# Required for React Router to work on Hostinger / Apache servers.
+# This redirects all requests to index.html so the React app handles routing.
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]

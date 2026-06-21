@@ -1,0 +1,257 @@
+/* ─────────────────────────────────────────────────────────────
+   SNTheAIMaster.com — Global Styles
+   Design System: The Precision Signal
+   ───────────────────────────────────────────────────────────── */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (Design Tokens) ───────────────────── */
+:root {
+  --void:       #050508;
+  --surface:    #0D0D14;
+  --border:     #1A1A2A;
+  --indigo:     #6C63FF;
+  --teal:       #00D4C2;
+  --amber:      #FF9F43;
+  --warm-white: #F0EDE8;
+  --muted:      #8B8FA8;
+  --dim:        #4A4D5E;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+  --font-serif:   'Instrument Serif', serif;
+
+  --nav-height: 72px;
+  --section-pad: clamp(4rem, 8vw, 7rem);
+  --site-max:   1200px;
+  --gutter:     clamp(1.25rem, 4vw, 2rem);
+}
+
+/* ── Base Reset & Defaults ────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--warm-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Subtle noise grain overlay for depth */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── Typography Scale ─────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--warm-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 5rem);   font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem);   font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 600; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+p {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Utility Classes ──────────────────────────────────────────── */
+.site-container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: var(--section-pad) 0;
+}
+
+/* Section divider — asymmetric single line */
+.section-divider {
+  width: calc(100% - 80px);
+  height: 1px;
+  background: var(--border);
+  margin: 0 40px;
+  opacity: 0.6;
+}
+
+/* Mono label — used for tags, categories, metadata */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+}
+
+/* Serif prose — used for research body text */
+.serif-prose {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* ── Button Styles ────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--indigo);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  border-color: var(--indigo);
+  color: var(--indigo);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--warm-white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  border-color: var(--muted);
+  color: var(--warm-white);
+}
+
+.btn-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--amber);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid var(--amber);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-amber:hover {
+  background: var(--amber);
+  color: var(--void);
+}
+
+/* ── Card Styles ──────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--dim);
+}
+
+/* ── Grid Dot Background ──────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* ── Scrollbar Styling ────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--void); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+
+/* ── Selection Colour ─────────────────────────────────────────── */
+::selection {
+  background: var(--indigo);
+  color: #fff;
+}
+
+/* ── Focus Visible ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+/* ── Responsive Nav Offset ────────────────────────────────────── */
+.nav-offset {
+  padding-top: var(--nav-height);
+}
+
+/* ── Form Inputs ──────────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--warm-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--indigo);
+}
+
+.form-input::placeholder {
+  color: var(--dim);
+}
+
+/* ── Framer Motion: respect reduced motion ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
