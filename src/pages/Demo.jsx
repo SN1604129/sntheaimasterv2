@@ -570,9 +570,8 @@ const TABS = [
 
 export default function Demo() {
   const [activeTab, setActiveTab] = useState('contract')
-  const [apiKey,    setApiKey]    = useState(() => sessionStorage.getItem('sn_openai_key') || '')
-  const [showKey,   setShowKey]   = useState(() => !sessionStorage.getItem('sn_openai_key'))
-
+  const [apiKey, setApiKey] = useState(() => sessionStorage.getItem('sn_openai_key') || import.meta.env.VITE_OPENAI_KEY || '')
+  const [showKey, setShowKey] = useState(() => !sessionStorage.getItem('sn_openai_key') && !import.meta.env.VITE_OPENAI_KEY)
   const active = TABS.find(t => t.id === activeTab)
 
   return (
