@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const ADMIN_PASSWORD = 'sn2024admin'
+const CLIENT_ADMIN_ENABLED = import.meta.env.DEV
+const ADMIN_PASSWORD = import.meta.env.DEV
+  ? import.meta.env.VITE_LOCAL_ADMIN_PASSWORD || 'local-admin-only'
+  : ''
 
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -15,6 +18,8 @@ function savePosts(posts) {
 }
 
 export default function Admin() {
+  if (!CLIENT_ADMIN_ENABLED) return <AdminUnavailable />
+
   const [authed,    setAuthed]    = useState(false)
   const [password,  setPassword]  = useState('')
   const [pwError,   setPwError]   = useState('')
@@ -278,6 +283,22 @@ Return ONLY valid JSON, no markdown, no text outside JSON:
             )}
           </div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+function AdminUnavailable() {
+  return (
+    <div className="nav-offset" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+      <div style={{ maxWidth: '480px', textAlign: 'center' }}>
+        <p className="mono-label" style={{ marginBottom: '1rem' }}>Admin</p>
+        <h1 className="type-h2" style={{ marginBottom: '1rem' }}>
+          Temporarily unavailable.
+        </h1>
+        <p style={{ maxWidth: '420px', margin: '0 auto' }}>
+          The previous admin screen used client-side access control, so it is disabled in production until a proper server-side login is added.
+        </p>
       </div>
     </div>
   )

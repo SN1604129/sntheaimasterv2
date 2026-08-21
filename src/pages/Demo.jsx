@@ -1,12 +1,14 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // ── Shared helpers ─────────────────────────────────────────────────────────────
 
-function getKey() {
-  const key = sessionStorage.getItem('sn_openai_key') || import.meta.env.VITE_OPENAI_KEY || ''
-  console.log('Key found:', key ? 'YES' : 'NO')
-  return key
+function getDemoOpenAIKey() {
+  const sessionKey = sessionStorage.getItem('sn_openai_key') || ''
+  if (sessionKey) return sessionKey
+
+  // Local developer convenience only. Do not expose API keys in production bundles.
+  return import.meta.env.DEV ? import.meta.env.VITE_OPENAI_KEY || '' : ''
 }
 
 async function callOpenAI(systemPrompt, userContent, key) {
@@ -65,7 +67,7 @@ function ApiKeyBanner({ apiKey, setApiKey, show, setShow }) {
       <div className="site-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--muted)', flexShrink: 0 }}>
-            OpenAI API key — stored in session only, never sent to any server:
+            OpenAI API key — stored in this browser session and sent directly to OpenAI for this demo:
           </p>
           <input
             type="password"
@@ -570,8 +572,8 @@ const TABS = [
 
 export default function Demo() {
   const [activeTab, setActiveTab] = useState('contract')
-  const [apiKey, setApiKey] = useState(() => sessionStorage.getItem('sn_openai_key') || import.meta.env.VITE_OPENAI_KEY || '')
-  const [showKey, setShowKey] = useState(() => !sessionStorage.getItem('sn_openai_key') && !import.meta.env.VITE_OPENAI_KEY)
+  const [apiKey, setApiKey] = useState(() => getDemoOpenAIKey())
+  const [showKey, setShowKey] = useState(() => !getDemoOpenAIKey())
   const active = TABS.find(t => t.id === activeTab)
 
   return (

@@ -9,6 +9,7 @@ import Demo      from './pages/Demo'
 import Blog      from './pages/Blog'
 import BlogPost  from './pages/BlogPost'
 import Admin     from './pages/Admin'
+import MyTaleGenie from './pages/MyTaleGenie'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/blog"       element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin"      element={<Admin />} />
+          <Route path="/mytaelegenie" element={<MyTaleGenie />} />
           <Route path="*" element={
             <div className="nav-offset flex items-center justify-center min-h-screen text-center px-6">
               <div>

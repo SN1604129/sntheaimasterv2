@@ -1,172 +1,75 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../data/siteData'
 
+const companyItems = ['About', 'Work', 'Insights']
+const serviceItems = ['AI-Powered Websites', 'AI Agents & Automation', 'Custom AI Software']
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer style={{
-      borderTop:  '1px solid var(--border)',
-      background: 'var(--void)',
-      padding:    '3rem 0 2rem',
-      marginTop:  '4rem',
-    }}>
+    <footer className="snai-footer">
       <div className="site-container">
-        {/* ── Top Row ─────────────────────────────────────────── */}
-        <div style={{
-          display:              'grid',
-          gridTemplateColumns:  'auto 1fr auto',
-          alignItems:           'start',
-          gap:                  '2rem',
-          marginBottom:         '3rem',
-        }}
-          className="footer-grid"
-        >
-          {/* Brand */}
-          <div>
-            <div style={{
-              display:     'flex',
-              alignItems:  'center',
-              gap:         '0.75rem',
-              marginBottom: '0.75rem',
-            }}>
-              <div style={{
-                width:        '32px',
-                height:       '32px',
-                background:   'var(--indigo)',
-                borderRadius: '2px',
-                display:      'flex',
-                alignItems:   'center',
-                justifyContent: 'center',
-                flexShrink:   0,
-              }}>
-                <span style={{
-                  fontFamily:  'var(--font-display)',
-                  fontWeight:  800,
-                  fontSize:    '12px',
-                  color:       '#fff',
-                }}>SN</span>
-              </div>
-              <span style={{
-                fontFamily:  'var(--font-display)',
-                fontWeight:  700,
-                fontSize:    '0.9rem',
-                color:       'var(--warm-white)',
-              }}>
-                {siteConfig.name}
-              </span>
-            </div>
-            <p style={{
-              fontFamily:  'var(--font-mono)',
-              fontSize:    '0.7rem',
-              color:       'var(--dim)',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}>
-              Signal over noise.
+        <div className="snai-footer-grid">
+          <div className="snai-footer-brand">
+            <Link to="/" className="snai-brand" aria-label="SNAI home" style={{ marginBottom: '1rem' }}>
+              <span className="snai-mark" aria-hidden="true">S</span>
+              <span className="snai-wordmark">SNAI</span>
+            </Link>
+            <p className="type-body-lg" style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>
+              AI systems that help businesses grow.
+            </p>
+            <p className="type-body-sm">
+              Advanced AI engineering shaped around clear business outcomes, practical delivery and human understanding.
             </p>
           </div>
 
-          {/* Spacer */}
-          <div />
-
-          {/* Navigation columns */}
-          <div style={{ display: 'flex', gap: '3rem' }}>
-            {/* Navigate */}
+          <div className="snai-footer-columns">
             <div>
-              <p className="mono-label" style={{ marginBottom: '1rem', fontSize: '0.65rem' }}>Navigate</p>
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {[
-                  { label: 'Home',     to: '/' },
-                  { label: 'Research', to: '/research' },
-                  { label: 'Contact',  to: '/contact' },
-                ].map(link => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize:   '0.85rem',
-                      color:      'var(--muted)',
-                      transition: 'color 0.2s',
-                    }}
-                    onMouseEnter={e => e.target.style.color = 'var(--warm-white)'}
-                    onMouseLeave={e => e.target.style.color = 'var(--muted)'}
-                  >
-                    {link.label}
-                  </Link>
+              <p className="snai-footer-heading">Company</p>
+              <div className="snai-footer-list">
+                {companyItems.map(item => (
+                  <span key={item} className="snai-footer-text">
+                    {item}
+                  </span>
                 ))}
-              </nav>
+              </div>
             </div>
 
-            {/* Connect */}
             <div>
-              <p className="mono-label" style={{ marginBottom: '1rem', fontSize: '0.65rem' }}>Connect</p>
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {[
-                  { label: 'LinkedIn', href: siteConfig.linkedin },
-                  { label: 'GitHub',   href: siteConfig.github },
-                  { label: 'Email',    href: `mailto:${siteConfig.email}` },
-                ].map(link => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener noreferrer"
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize:   '0.85rem',
-                      color:      'var(--muted)',
-                      transition: 'color 0.2s',
-                    }}
-                    onMouseEnter={e => e.target.style.color = 'var(--warm-white)'}
-                    onMouseLeave={e => e.target.style.color = 'var(--muted)'}
-                  >
-                    {link.label}
-                  </a>
+              <p className="snai-footer-heading">Services</p>
+              <div className="snai-footer-list">
+                {serviceItems.map(item => (
+                  <span key={item} className="snai-footer-text">
+                    {item}
+                  </span>
                 ))}
-              </nav>
+              </div>
+            </div>
+
+            <div>
+              <p className="snai-footer-heading">Contact</p>
+              <div className="snai-footer-list">
+                <span className="snai-footer-text">{siteConfig.location}</span>
+                <a className="snai-footer-link" href={`mailto:${siteConfig.email}`}>
+                  {siteConfig.email}
+                </a>
+                <a className="snai-footer-link" href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+                <a className="snai-footer-link" href={siteConfig.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ── Bottom Bar ──────────────────────────────────────── */}
-        <div style={{
-          borderTop:      '1px solid var(--border)',
-          paddingTop:     '1.5rem',
-          display:        'flex',
-          alignItems:     'center',
-          justifyContent: 'space-between',
-          flexWrap:       'wrap',
-          gap:            '0.75rem',
-        }}>
-          <p style={{
-            fontFamily:  'var(--font-mono)',
-            fontSize:    '0.7rem',
-            color:       'var(--dim)',
-            letterSpacing: '0.04em',
-          }}>
-            © {year} {siteConfig.name} · {siteConfig.location}
-          </p>
-          <p style={{
-            fontFamily:  'var(--font-mono)',
-            fontSize:    '0.7rem',
-            color:       'var(--dim)',
-            letterSpacing: '0.04em',
-          }}>
-            Built with purpose.
-          </p>
+        <div className="snai-footer-bottom">
+          <p className="type-body-sm">© {year} SNAI</p>
+          <p className="type-body-sm">Sydney, Australia · Working globally</p>
         </div>
       </div>
-
-      {/* Responsive footer grid */}
-      <style>{`
-        @media (max-width: 640px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </footer>
   )
 }
