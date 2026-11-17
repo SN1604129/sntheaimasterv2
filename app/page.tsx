@@ -329,6 +329,15 @@ export default function HomePage() {
           title={home.about.title}
         />
         <div className="about-layout">
+          <figure className="about-portrait">
+            <Image
+              src="/images/sudipta-nath-about.jpeg"
+              alt="Sudipta Nath outdoors wearing headphones"
+              width={2316}
+              height={3088}
+              sizes="(max-width: 320px) calc(100vw - 40px), 280px"
+            />
+          </figure>
           <div className="about-copy">
             <p className="about-lead">{profile.introduction}</p>
             <p>{profile.philosophy}</p>
