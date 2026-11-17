@@ -64,7 +64,7 @@ Core existing case studies remain in `content/projects.ts`. Additional research 
 
 ## Logo assets
 
-The header and footer use the user's original logo image, preserving its lettering, colours and proportions. SVG viewports trim only the surrounding blank canvas. The small monogram, favicon and generated Apple touch icon use the same source artwork.
+The header and footer use the user's original logo image, preserving its lettering and proportions. SVG clipping removes the blank canvas, and a mask colours the original wordmark to match the site's theme. The SN monogram keeps its original navy, white and blue colours. The small monogram, favicon and generated Apple touch icon use the same source artwork.
 
 - `public/brand/sn-the-ai-master-8e01cfc7.png` — exact original supplied PNG.
 - `components/brand.tsx` — logo and monogram viewports used by the site.

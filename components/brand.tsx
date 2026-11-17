@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 export const logoSource = "/brand/sn-the-ai-master-8e01cfc7.png";
 
 export function BrandMark({ className = "" }: { className?: string }) {
@@ -15,6 +17,7 @@ export function BrandMark({ className = "" }: { className?: string }) {
 }
 
 export function Brand() {
+  const id = useId();
   return (
     <span className="master-brand">
       <svg
@@ -24,7 +27,30 @@ export function Brand() {
         role="img"
         aria-label="SN The AI Master — Sudipta Nath, AI Engineer"
       >
-        <image href={logoSource} width="720" height="480" />
+        <defs>
+          <clipPath id={`${id}-mark`}>
+            <rect x="116" y="156" width="168" height="168" rx="40" />
+          </clipPath>
+          <filter id={`${id}-lettering`} colorInterpolationFilters="sRGB">
+            <feColorMatrix type="luminanceToAlpha" />
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="-1.14" intercept="1.14" />
+            </feComponentTransfer>
+          </filter>
+          <mask
+            id={`${id}-wordmark`}
+            maskUnits="userSpaceOnUse"
+            x="308"
+            y="200"
+            width="305"
+            height="84"
+            style={{ maskType: "alpha" }}
+          >
+            <image href={logoSource} width="720" height="480" filter={`url(#${id}-lettering)`} />
+          </mask>
+        </defs>
+        <image href={logoSource} width="720" height="480" clipPath={`url(#${id}-mark)`} />
+        <rect x="308" y="200" width="305" height="84" fill="currentColor" mask={`url(#${id}-wordmark)`} />
       </svg>
     </span>
   );
