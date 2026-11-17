@@ -1,0 +1,27 @@
+> **Draft preview.** This placeholder is based on the supplied project facts. TODO: Review the wording, add a permitted synthetic example and confirm employer approval before publishing a finished article.
+
+## A small edit can become a small signal
+
+While building a document-forensics pipeline at Truuth, I investigated why a vision-language model was missing fine-grained tampering. The pipeline combined Error Level Analysis heatmaps, PDF structural analysis, Qwen3-VL-235B through AWS Bedrock Converse and a RAG component.
+
+The failure was tied to the vision encoder’s patch averaging. Small tampering signals were diluted in the visual representation.
+
+## The fix reached beyond the prompt
+
+I changed the inputs and the decision logic rather than relying only on prompt changes. The useful question was what information reached the model, and how the rest of the pipeline used that evidence.
+
+This distinction matters when debugging a multimodal system. Language instructions are one part of the pipeline; the representation of the input and the decision process also need attention.
+
+## Evaluation kept the changes accountable
+
+Automated benchmarking tracked false positives and false negatives across 12 pipeline versions. In the final evaluation, all 40 modified documents were detected, with zero false positives.
+
+That result belongs to the final evaluation set. It does not establish universal accuracy, and the genuine-control document count is not available in this case study. Overall accuracy and specificity are therefore not reported.
+
+## What the finished article will include
+
+- TODO: A clearly synthetic before/after example illustrating the lost signal.
+- TODO: A permitted description of the input and decision-logic changes.
+- TODO: The evaluation protocol, genuine-control count and limitations.
+
+The full [project case study](/projects/truuth-document-forensics) describes the confirmed work and its current evidence boundaries.

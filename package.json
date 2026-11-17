@@ -1,26 +1,47 @@
 {
-  "name": "sntheaimaster",
+  "name": "sudipta-nath-portfolio",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "predev": "node scripts/generate-blog.mjs",
+    "prebuild": "node scripts/generate-blog.mjs",
+    "pretypecheck": "node scripts/generate-blog.mjs",
+    "blog:new": "node scripts/blog.mjs new",
+    "blog:publish": "node scripts/blog.mjs publish",
+    "project:new": "node scripts/new-project.mjs",
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "playwright test",
+    "test:content": "node --test scripts/tests/*.test.mjs",
+    "audit": "node scripts/audit.mjs",
+    "resume": "python3 scripts/generate-resume.py"
   },
   "dependencies": {
-    "framer-motion": "^11.0.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "react-router-dom": "^6.22.0"
+    "@fontsource-variable/inter": "^5.2.8",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "16.4.6",
+    "@vercel/analytics": "^1.6.1",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.2.0"
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.1",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "lighthouse": "^13.0.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

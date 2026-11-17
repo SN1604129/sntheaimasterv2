@@ -1,0 +1,8 @@
+{
+  "title": "Why my vision-language model missed small document edits",
+  "description": "A draft field note on patch averaging, lost forensic signals and the engineering around a multimodal model.",
+  "category": "Multimodal AI",
+  "published": false,
+  "publishedAt": null,
+  "projectSlug": "truuth-document-forensics"
+}

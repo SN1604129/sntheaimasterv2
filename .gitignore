@@ -32,3 +32,11 @@ Thumbs.db
 .cache/
 .parcel-cache/
 coverage/
+.next/
+out/
+*.tsbuildinfo
+test-results/
+playwright-report/
+artifacts/
+.vercel/
+.sites-runtime/

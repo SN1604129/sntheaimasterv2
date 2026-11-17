@@ -1,0 +1,82 @@
+{
+  "name": "Sudipta Nath",
+  "title": "AI Engineer",
+  "location": "Sydney, Australia",
+  "email": "sudipta1604129@gmail.com",
+  "github": "https://github.com/SN1604129",
+  "website": "https://sntheaimaster.com",
+  "summary": "AI Engineer building LLM, RAG and multimodal systems, with experience in document forensics, multilingual dialogue and full-stack delivery. Master of IT (Artificial Intelligence), Macquarie University, completed July 2026.",
+  "experience": [
+    {
+      "role": "AI Engineer Intern",
+      "organisation": "Truuth, Sydney",
+      "date": "Completed June 2026",
+      "bullets": [
+        "Built a Python document-forensics pipeline combining ELA heatmaps, PDF structural analysis and Qwen3-VL-235B via AWS Bedrock Converse, with a RAG component.",
+        "Automated false-positive/negative regression benchmarking across 12 versions. Final evaluation: 40/40 modified documents detected, zero false positives (bounded evaluation set; genuine-control count not supplied).",
+        "Diagnosed fine-grained signal loss from vision-encoder patch averaging; changed inputs and decision logic. Wrote R&D handover documentation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Stix Eatery Platform",
+      "detail": "Online ordering, rewards/loyalty and admin web platform for a real cafe in Miranda NSW.",
+      "link": "https://stixeatery.com.au"
+    },
+    {
+      "name": "Smart Financial Assistant",
+      "detail": "English, Bengali and Hindi dialogue system using LLaMA 3.1 and Mistral 7B via Ollama; finite-state conversation control and a 36-trial automated evaluation pipeline."
+    },
+    {
+      "name": "Healthcare NLP System",
+      "detail": "8-tab Streamlit application for NER, relation extraction and clinical summarisation with fine-tuned BioBERT/ClinicalBERT.",
+      "link": "https://github.com/SN1604129/NLP_Assignment3"
+    },
+    {
+      "name": "ROS2 Robot Vision & Navigation",
+      "detail": "MobileNetV3-Large classifier on a physical robot with SEARCH, ALIGN, APPROACH and ARRIVED states."
+    }
+  ],
+  "research": [
+    "TRACE: neurosymbolic causal reasoning for autonomous-driving crash scenarios with LTL/SAT verification; supervised by Dr. Xi Zheng, Macquarie University.",
+    "NeMA-LC / NeMA-Lite: memory-augmented transformers for long-context reasoning. StressTwinNet: multimodal physiological stress modelling (in progress)."
+  ],
+  "publications": [
+    "IEEE ETCCE 2020: CNN face-recognition attendance system.",
+    "Taylor & Francis 2023: predicting student satisfaction with e-learning."
+  ],
+  "education": [
+    {
+      "degree": "Master of Information Technology (Artificial Intelligence)",
+      "institution": "Macquarie University",
+      "date": "Completed July 2026"
+    },
+    {
+      "degree": "BSc Computer Science & Engineering",
+      "institution": "CUET, Bangladesh",
+      "date": "2017-2022"
+    }
+  ],
+  "skills": [
+    "Python",
+    "SQL",
+    "JavaScript",
+    "LLMs",
+    "Prompt engineering",
+    "RAG",
+    "Multimodal inference",
+    "Evaluation pipelines",
+    "AWS Bedrock",
+    "Docker",
+    "Git/GitHub",
+    "REST APIs",
+    "Streamlit",
+    "PyTorch",
+    "TensorFlow",
+    "scikit-learn",
+    "Transformers",
+    "OpenCV",
+    "ROS2"
+  ]
+}
