@@ -331,7 +331,7 @@ export default function HomePage() {
         <div className="about-layout">
           <figure className="about-portrait">
             <Image
-              src="/images/sudipta-nath-about.jpeg"
+              src="/images/sudipta-nath-about-777fa2b8.jpeg"
               alt="Sudipta Nath outdoors wearing headphones"
               width={2316}
               height={3088}
