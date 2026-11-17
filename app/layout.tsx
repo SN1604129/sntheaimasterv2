@@ -19,7 +19,10 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.svg", apple: "/apple-icon.png" },
+  icons: {
+    icon: "/favicon.svg?v=8e01cfc7",
+    apple: "/apple-icon?v=8e01cfc7",
+  },
   openGraph: { siteName: profile.name, locale: "en_AU", type: "website" },
 };
 

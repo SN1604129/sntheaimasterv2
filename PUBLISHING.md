@@ -64,11 +64,12 @@ Core existing case studies remain in `content/projects.ts`. Additional research 
 
 ## Logo assets
 
-The reference-style navy SN monogram, blue dot and The AI Master wordmark are used in the header and footer, with the matching favicon and touch icon.
+The header and footer use the user's original logo image, preserving its lettering, colours and proportions. SVG viewports trim only the surrounding blank canvas. The small monogram, favicon and generated Apple touch icon use the same source artwork.
 
-- `public/brand/sn-the-ai-master-dark.svg` — light wordmark for a dark background.
-- `public/brand/sn-the-ai-master-light.svg` — dark wordmark for a light background.
-- `components/brand.tsx` — theme-aware inline version used by the site.
+- `public/brand/sn-the-ai-master-8e01cfc7.png` — exact original supplied PNG.
+- `components/brand.tsx` — logo and monogram viewports used by the site.
+- `app/apple-icon.tsx` — touch icon rendered from the original monogram.
+- Existing SVG download URLs wrap the original artwork on its white background.
 
 ## Before deploying
 
