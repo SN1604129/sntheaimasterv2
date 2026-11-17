@@ -29,6 +29,7 @@ export default function BlogPage() {
       published,
       publishedAt,
       readingTime,
+      image,
     }) => ({
       slug,
       title,
@@ -37,6 +38,7 @@ export default function BlogPage() {
       published,
       dateLabel: publishedAt ? formatPostDate(publishedAt) : null,
       readingTime,
+      image,
     }),
   );
   return (

@@ -17,6 +17,19 @@ Write the article in Markdown/MDX. Replace the TODO placeholders in the body and
 
 The draft appears in local development. Drafts stay out of the production blog listing, RSS and sitemap, and their individual preview pages have noindex metadata. Preview URLs are not private or authenticated; keep confidential material out of all source content.
 
+For a featured image, put your file in `public/images/blog/` and add an optional `image` object to the article's JSON metadata:
+
+```json
+"image": {
+  "src": "/images/blog/your-article.png",
+  "alt": "A short description of the image",
+  "width": 1200,
+  "height": 630
+}
+```
+
+Use the file's actual dimensions. The same image appears on the article, blog card and homepage preview, and supplies the article's social-sharing image. A 1200 × 630 image suits sharing previews.
+
 When ready:
 
 ```bash

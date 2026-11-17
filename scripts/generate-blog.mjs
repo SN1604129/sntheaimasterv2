@@ -37,6 +37,19 @@ for (const filename of files) {
     1,
     Math.ceil([body, ...(post.faq || []).map((item) => `${item.question} ${item.answer}`)].join(" ").trim().split(/\s+/).length / 200),
   );
+  if (
+    post.image != null &&
+    (typeof post.image.src !== "string" ||
+      !post.image.src.startsWith("/") ||
+      post.image.src.startsWith("//") ||
+      typeof post.image.alt !== "string" ||
+      !post.image.alt.trim() ||
+      !Number.isInteger(post.image.width) ||
+      post.image.width <= 0 ||
+      !Number.isInteger(post.image.height) ||
+      post.image.height <= 0)
+  )
+    throw new Error(`Blog images need a public path, alt text and positive dimensions: ${filename}`);
   entries.push({
     slug,
     title: post.title,
@@ -50,6 +63,7 @@ for (const filename of files) {
     seoTitle: typeof post.seoTitle === "string" ? post.seoTitle : null,
     keywords: Array.isArray(post.keywords) ? post.keywords : [],
     tags: Array.isArray(post.tags) ? post.tags : [],
+    image: post.image || null,
     faq: Array.isArray(post.faq) ? post.faq : [],
   });
 }

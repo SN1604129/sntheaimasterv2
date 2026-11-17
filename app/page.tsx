@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { ProjectVisual } from "@/components/project-visual";
 import { SectionHeading } from "@/components/section-heading";
@@ -379,6 +380,16 @@ export default function HomePage() {
         <div>
           {listedPosts.slice(0, 2).map((post) => (
             <article key={post.slug}>
+              {post.image && (
+                <Image
+                  className="home-journal-cover"
+                  src={post.image.src}
+                  alt={post.image.alt}
+                  width={post.image.width}
+                  height={post.image.height}
+                  sizes="(max-width: 800px) calc(100vw - 40px), 550px"
+                />
+              )}
               <div className="post-meta">
                 <span>{post.category}</span>
                 <span>{post.readingTime}</span>

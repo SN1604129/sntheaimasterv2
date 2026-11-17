@@ -1,6 +1,13 @@
 import type { ComponentType } from "react";
 import { postIndex } from "./blog-index.generated";
 
+export type BlogImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -14,6 +21,7 @@ export type BlogPost = {
   seoTitle: string | null;
   keywords: string[];
   tags: string[];
+  image: BlogImage | null;
   faq: { question: string; answer: string }[];
   load: () => Promise<{ default: ComponentType }>;
 };

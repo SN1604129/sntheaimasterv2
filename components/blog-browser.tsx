@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { Icon } from "./icon";
+import type { BlogImage } from "@/content/blog";
 
 export type ArticleSummary = {
   slug: string;
@@ -12,6 +14,7 @@ export type ArticleSummary = {
   published: boolean;
   dateLabel: string | null;
   readingTime: string;
+  image: BlogImage | null;
 };
 
 export function BlogBrowser({ articles }: { articles: ArticleSummary[] }) {
@@ -76,17 +79,30 @@ export function BlogBrowser({ articles }: { articles: ArticleSummary[] }) {
             className={`editorial-card ${index === 0 ? "editorial-card-lead" : ""}`}
             key={post.slug}
           >
-            <div className="article-card-art" aria-hidden="true">
-              <span className="article-art-label">{post.category}</span>
-              <div className="article-art-grid">
-                <span>INPUT</span>
-                <i />
-                <span>MODEL</span>
-                <i />
-                <span>EVIDENCE</span>
+            {post.image ? (
+              <div className="article-card-cover">
+                <Image
+                  src={post.image.src}
+                  alt={post.image.alt}
+                  width={post.image.width}
+                  height={post.image.height}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) 45vw, 550px"
+                />
               </div>
-              <span className="article-art-end">SN / ENGINEERING NOTES</span>
-            </div>
+            ) : (
+              <div className="article-card-art" aria-hidden="true">
+                <span className="article-art-label">{post.category}</span>
+                <div className="article-art-grid">
+                  <span>INPUT</span>
+                  <i />
+                  <span>MODEL</span>
+                  <i />
+                  <span>EVIDENCE</span>
+                </div>
+                <span className="article-art-end">SN / ENGINEERING NOTES</span>
+              </div>
+            )}
             <div className="article-card-copy">
               <div className="post-meta">
                 <span>{post.category}</span>

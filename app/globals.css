@@ -1998,6 +1998,17 @@ textarea::placeholder {
   font-size: 11px;
   margin-top: 26px;
 }
+.article-cover {
+  margin: 0 0 38px;
+}
+.article-cover img,
+.home-journal-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
 .prose {
   color: var(--muted);
   font-size: 15px;
@@ -3518,6 +3529,9 @@ textarea::placeholder {
 .home-journal article + article {
   margin-top: 25px;
 }
+.home-journal-cover {
+  margin-bottom: 22px;
+}
 .home-journal h3 {
   font-size: 26px;
   line-height: 1.35;
@@ -3681,6 +3695,16 @@ textarea::placeholder {
   flex-direction: column;
   justify-content: space-between;
   background: var(--soft-accent);
+}
+.article-card-cover {
+  display: flex;
+  align-items: center;
+  background: #0e1b2d;
+}
+.article-card-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .article-art-label,
 .article-art-end {

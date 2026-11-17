@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { posts, getPost, formatPostDate } from "@/content/blog";
 import { ArticleActions } from "@/components/article-actions";
@@ -22,7 +23,18 @@ export async function generateMetadata({
     ...base,
     ...(post.seoTitle ? { title: { absolute: post.seoTitle } } : {}),
     keywords: post.keywords,
-    openGraph: { ...base.openGraph, type: "article" as const, authors: [profile.url], ...(post.publishedAt ? { publishedTime: post.publishedAt } : {}), tags: post.tags },
+    openGraph: {
+      ...base.openGraph,
+      type: "article" as const,
+      authors: [profile.url],
+      ...(post.publishedAt ? { publishedTime: post.publishedAt } : {}),
+      tags: post.tags,
+      ...(post.image ? { images: [{ url: post.image.src, width: post.image.width, height: post.image.height, alt: post.image.alt }] } : {}),
+    },
+    twitter: {
+      ...base.twitter,
+      ...(post.image ? { images: [{ url: post.image.src, alt: post.image.alt }] } : {}),
+    },
     robots: { index: post.published, follow: true },
   };
 }
@@ -36,7 +48,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
   const { default: Content } = await post.load();
   const structuredData = [
-    ...(post.published ? [{ "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.description, datePublished: post.publishedAt, author: { "@type": "Person", name: profile.name, url: profile.url }, publisher: { "@type": "Person", name: profile.name, url: profile.url }, mainEntityOfPage: `${profile.url}/blog/${post.slug}`, image: `${profile.url}/opengraph-image`, keywords: post.keywords.join(", ") }] : []),
+    ...(post.published ? [{ "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.description, datePublished: post.publishedAt, author: { "@type": "Person", name: profile.name, url: profile.url }, publisher: { "@type": "Person", name: profile.name, url: profile.url }, mainEntityOfPage: `${profile.url}/blog/${post.slug}`, image: new URL(post.image?.src || "/opengraph-image", profile.url).href, keywords: post.keywords.join(", ") }] : []),
     ...(post.faq.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: post.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }] : []),
   ];
   return (
@@ -65,6 +77,18 @@ export default async function BlogPostPage({
         </p>
         {post.tags.length > 0 && <ul className="tag-list article-tags" aria-label="Article topics">{post.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>}
       </header>
+      {post.image && (
+        <figure className="article-cover">
+          <Image
+            src={post.image.src}
+            alt={post.image.alt}
+            width={post.image.width}
+            height={post.image.height}
+            sizes="(max-width: 850px) calc(100vw - 40px), 810px"
+            preload
+          />
+        </figure>
+      )}
       <div className="prose">
         <Content />
       </div>
