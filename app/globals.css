@@ -380,6 +380,16 @@ section[id] {
 }
 
 /* Hero */
+.home-cover {
+  margin-block: 28px 0;
+}
+.home-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
 .hero {
   padding-top: 44px;
 }
@@ -1093,14 +1103,16 @@ section[id] {
   line-height: 1.45;
   letter-spacing: -0.025em;
 }
+.publication h3 svg {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: -1px;
+}
 .publication h3 + p {
   color: var(--muted);
   font-size: 11px;
   margin-top: 7px;
-}
-.publication-footnote {
-  font-size: 10px;
-  padding-top: 4px;
 }
 .about-layout {
   display: grid;

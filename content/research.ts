@@ -20,17 +20,15 @@ export const publications: Publication[] = [
   {
     year: "2020",
     publisher: "IEEE · ETCCE",
-    title: "CNN face-recognition attendance system",
+    title: "Development of an Automatic Class Attendance System using CNN-based Face Recognition",
     description: "Computer vision for automated class attendance.",
-    href: null,
-    // TODO: Add the exact IEEE publication title, author list and DOI URL.
+    href: "https://ieeexplore.ieee.org/abstract/document/9350904",
   },
   {
     year: "2023",
     publisher: "Taylor & Francis",
-    title: "Predicting student satisfaction with e-learning",
-    description: "Research on student satisfaction in e-learning.",
-    href: null,
-    // TODO: Add the exact Taylor & Francis publication title, author list and DOI URL.
+    title: "Analysis of Physical and Psychological Impacts to Predict Satisfaction of Students toward E-Learning during COVID-19 Pandemic",
+    description: "Book chapter in Applied Informatics for Industry 4.0, examining student satisfaction in e-learning.",
+    href: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003256069-14/analysis-physical-psychological-impacts-predict-satisfaction-students-toward-learning-covid-19-pandemic-sudipta-nath",
   },
 ];

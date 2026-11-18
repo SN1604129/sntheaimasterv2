@@ -59,6 +59,16 @@ export default function HomePage() {
           __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
         }}
       />
+      <figure className="container home-cover">
+        <Image
+          src="/images/sudipta-nath-cover-3ee991db.png"
+          alt="Turning AI research into real-world products — Sudipta Nath, AI Engineer and ML Researcher in Sydney."
+          width={1584}
+          height={396}
+          unoptimized
+          preload
+        />
+      </figure>
       <section
         className="hero recruiter-hero container"
         aria-labelledby="hero-heading"
@@ -309,9 +319,6 @@ export default function HomePage() {
                   </div>
                 </article>
               ))}
-              <p className="fine-print publication-footnote">
-                Descriptive paper titles. TODO: Exact citations and DOI links.
-              </p>
             </div>
           </div>
         </div>
