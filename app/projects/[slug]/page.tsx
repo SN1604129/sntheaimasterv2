@@ -73,7 +73,11 @@ export default async function ProjectPage({
             {sections.map((section, index) => (
               <a key={section.id} href={`#${section.id}`}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                {section.title}
+                {project.group === "Client" && section.id === "role"
+                  ? "My Role & AI Delivery"
+                  : project.group === "Client" && section.id === "stack"
+                    ? "Tools & Capabilities"
+                    : section.title}
               </a>
             ))}
           </nav>
@@ -88,7 +92,7 @@ export default async function ProjectPage({
           </section>
           <section id="role">
             <p className="eyebrow">02 / Ownership</p>
-            <h2>My Role</h2>
+            <h2>{project.group === "Client" ? "My Role & AI Delivery" : "My Role"}</h2>
             {project.role.map((paragraph) => (
               <p
                 className={paragraph.startsWith("TODO:") ? "todo-note" : ""}
@@ -140,18 +144,12 @@ export default async function ProjectPage({
           </section>
           <section id="stack">
             <p className="eyebrow">06 / Tools & capabilities</p>
-            <h2>Stack</h2>
+            <h2>{project.group === "Client" ? "Tools & Capabilities" : "Stack"}</h2>
             <ul className="tag-list stack-list">
               {project.tags.map((tag) => (
                 <li key={tag}>{tag}</li>
               ))}
             </ul>
-            {project.visual === "stix" && (
-              <p className="todo-note">
-                TODO: Add verified implementation technologies. Current tags
-                describe delivered capabilities.
-              </p>
-            )}
           </section>
           <section id="links">
             <p className="eyebrow">07 / Explore further</p>

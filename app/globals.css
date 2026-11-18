@@ -756,6 +756,27 @@ section[id] {
 .dialogue-visual {
   padding-bottom: 34px;
 }
+.education-visual {
+  display: flex;
+  flex-direction: column;
+  background: var(--soft-accent);
+}
+.education-wordmark {
+  margin: 20px auto 26px;
+  padding-inline: 20px;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  text-align: center;
+}
+.education-wordmark > span {
+  color: var(--accent);
+}
+.education-visual .stix-product-areas span {
+  white-space: normal;
+  line-height: 1.5;
+}
 .language-row {
   display: flex;
   gap: 14px;

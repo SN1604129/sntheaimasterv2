@@ -55,7 +55,7 @@ Fill in:
 1. Problem and your personal contribution, including team boundaries.
 2. A concrete outcome, confirmed stack, architecture and engineering decisions.
 3. Actual results with evaluation scope; do not invent numerical metrics.
-4. Repository/demo links and a suitable conceptual illustration (`dialogue`, `healthcare`, `robot`, `forensics` or `stix`). Avoid using an illustration that implies a different project capability.
+4. Repository/demo links and a suitable conceptual illustration (`dialogue`, `healthcare`, `robot`, `forensics`, `stix` or `education`). Avoid using an illustration that implies a different project capability.
 5. `group`: `University`, `Industry` or `Client`.
 
 When reviewed, set `published: true`. The project gets a case-study route, project-index card and sitemap entry automatically. To show it on the homepage, also set `featured: true` and its `featuredOrder`. The current three university projects use orders 1, 2 and 3.

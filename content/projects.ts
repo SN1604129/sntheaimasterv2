@@ -15,7 +15,7 @@ export type Project = {
   outcome: string;
   summary: string;
   tags: string[];
-  visual: "forensics" | "stix" | "dialogue" | "healthcare" | "robot";
+  visual: "forensics" | "stix" | "education" | "dialogue" | "healthcare" | "robot";
   problem: string[];
   role: string[];
   architecture: ArchitectureStep[];
@@ -97,48 +97,50 @@ const coreProjects: Project[] = [
     group: "Client",
     number: "02",
     title: "Stix Eatery Platform",
-    shortTitle: "Software for a real neighbourhood cafe.",
-    category: "Full-stack delivery · Miranda, NSW",
+    shortTitle: "AI-assisted delivery for a real Sydney cafe.",
+    category: "Client delivery · AI-assisted development",
     outcome:
-      "Online ordering, rewards and an admin platform for Stix Eatery in Miranda.",
+      "Online ordering, rewards, admin tools and chatbot support, built with AI-assisted development.",
     summary:
-      "A web platform for a real cafe, bringing customer ordering, loyalty and administration into the same product story.",
-    tags: ["Online ordering", "Rewards & loyalty", "Admin platform"],
+      "Used AI-assisted tools to build and refine a cafe platform, bringing ordering, loyalty, chatbot support and business administration into one delivery.",
+    tags: ["AI-assisted development", "Chatbot integration", "Ordering & loyalty", "Admin tools"],
     visual: "stix",
     problem: [
       "Stix Eatery is a cafe in Miranda, NSW. The platform brings together online ordering, rewards and loyalty, and administration.",
-      "This is the client-facing example in my portfolio: software tied to a real business and its day-to-day customer experience.",
+      "The work connects a real business's customer and staff workflows with a usable website and chatbot support.",
     ],
     role: [
-      "Built the Stix Eatery web platform covering online ordering, rewards/loyalty and administration.",
-      "TODO: Add the precise personal ownership, delivery dates and collaboration details before expanding this case study.",
+      "Used AI-assisted development tools to implement and iterate on the Stix Eatery web platform.",
+      "Built the ordering, rewards/loyalty and administration experience, and implemented chatbot support and AI-assisted tools around the business workflows.",
+      "The AI work supports a live business product: customer ordering and loyalty alongside the tools used to administer the platform.",
     ],
     architecture: [
-      { title: "Customer experience", detail: "Online ordering" },
-      { title: "Rewards", detail: "Loyalty experience" },
-      { title: "Administration", detail: "Business management interface" },
+      { title: "AI-assisted build", detail: "Implementation and iteration with AI-assisted tools" },
+      { title: "Customer website", detail: "Online ordering + rewards and loyalty" },
+      { title: "Chatbot integration", detail: "Conversational support within the client solution" },
+      { title: "Business tools", detail: "Administration and day-to-day platform management" },
     ],
     architectureNote:
-      "Conceptual product areas, not a verified backend architecture. TODO: Add the actual stack, integrations and architecture after confirming implementation details. The interface illustration is not a screenshot of the live site.",
+      "Conceptual view of the AI-assisted build process and the customer/business capabilities it delivers. The illustration is a product map rather than a screenshot of the live site.",
     challenge: {
-      title: "The implementation story still needs documenting.",
+      title: "Connecting AI-assisted implementation with a useful business workflow.",
       confirmed: false,
       paragraphs: [
-        "TODO: Describe one real ordering, loyalty or administration issue, the constraints involved, and the change that resolved it.",
-        "No conversion increase, revenue figure, uptime claim or implementation incident has been supplied, so none is claimed here.",
+        "AI-assisted development supported the implementation of ordering, loyalty and administration. Chatbot integration became part of the broader client solution.",
+        "The delivery brings the website, conversational support and business tools together around the cafe's everyday workflows.",
       ],
     },
     results: [
       { value: "Live", label: "business website" },
-      { value: "Miranda", label: "NSW, Australia" },
+      { value: "Chatbot", label: "integrated support capability" },
+      { value: "AI-assisted", label: "development and delivery" },
     ],
     resultNote:
-      "The demonstrated outcome is a platform for a real cafe. Business-impact metrics and customer testimonials have not been supplied.",
+      "A live client platform for Stix Eatery in Miranda, NSW, combining customer-facing features, chatbot support and business administration.",
     links: [{ label: "Visit Stix Eatery", href: "https://stixeatery.com.au" }],
     todos: [
-      "TODO: Confirm Stix project ownership, delivery dates, technical stack and integrations.",
-      "TODO: Add a real debugging story and any client-approved results; do not invent business metrics.",
-      "TODO: Add permitted Stix screenshots and, only if supplied, a client-approved testimonial.",
+      "TODO: Document the specific AI development tools, chatbot provider and implementation stack.",
+      "TODO: Add a client-approved delivery example, screenshots and measured business outcomes when available.",
     ],
   },
   {

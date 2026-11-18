@@ -97,6 +97,26 @@ export function ProjectVisual({
         </span>
       </div>
     );
+  if (variant === "education")
+    return (
+      <div
+        className="project-visual education-visual"
+        role="img"
+        aria-label="Conceptual Ready to Study client workflow: AI-assisted development, chatbot support and student enquiries."
+      >
+        <div className="visual-topline">
+          <span>READY TO STUDY</span>
+          <span>CLIENT DELIVERY</span>
+        </div>
+        <div className="education-wordmark">Ready to <span>Study.</span></div>
+        <div className="stix-product-areas">
+          <div><Icon name="code" /><span>AI-assisted build</span></div>
+          <div><Icon name="workflow" /><span>Chatbot support</span></div>
+          <div><Icon name="mail" /><span>Student enquiries</span></div>
+        </div>
+        <span className="visual-caption">Conceptual client workflow</span>
+      </div>
+    );
   if (variant === "stix")
     return (
       <div

@@ -258,6 +258,9 @@ test("university projects lead the homepage and the project index filters by rea
     "ROS2 Robot Vision & Navigation",
   ]);
   await page.goto("/projects");
+  await expect(page.getByRole("group", { name: "Filter projects" }).getByRole("button")).toHaveText([
+    "All work", "Industry", "Client", "University",
+  ]);
   await page.getByRole("button", { name: "University", exact: true }).click();
   await expect(page.locator(".project-index-grid")).toContainText("Smart Financial Assistant");
   await expect(page.locator(".project-index-grid")).not.toContainText("Stix Eatery Platform");
@@ -266,7 +269,12 @@ test("university projects lead the homepage and the project index filters by rea
   await expect(page.locator(".project-index-grid")).not.toContainText("Healthcare NLP System");
   await page.getByRole("button", { name: "Client", exact: true }).click();
   await expect(page.locator(".project-index-grid")).toContainText("Stix Eatery Platform");
+  await expect(page.locator(".project-index-grid")).toContainText("Ready to Study Website");
   await expect(page.locator(".project-index-grid")).not.toContainText("Healthcare NLP System");
+  await page.getByRole("heading", { name: "Ready to Study Website" }).getByRole("link").click();
+  await expect(page.getByRole("heading", { name: "My Role & AI Delivery", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Visit Ready to Study" })).toHaveAttribute("href", "https://www.readytostudy.org/");
+  await expect(page.locator("#role")).toContainText("chatbot support");
 });
 
 test("blog search, topic filtering and article links work with draft previews", async ({

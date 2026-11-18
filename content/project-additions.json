@@ -1,1 +1,81 @@
-[]
+[
+  {
+    "slug": "ready-to-study",
+    "number": "06",
+    "title": "Ready to Study Website",
+    "shortTitle": "AI-assisted delivery for an education consultancy.",
+    "group": "Client",
+    "category": "Client delivery · Education services",
+    "published": true,
+    "featured": false,
+    "outcome": "An education consultancy website built with AI-assisted development, chatbot integration and student enquiry pathways.",
+    "summary": "A live website for Ready to Study, connecting study destinations, course exploration, services and adviser contact with AI-assisted development and chatbot support.",
+    "tags": [
+      "AI-assisted development",
+      "Chatbot integration",
+      "Course exploration",
+      "Student enquiries"
+    ],
+    "visual": "education",
+    "problem": [
+      "Students need a clear way to explore study destinations, course options, admissions support and how to contact an education adviser.",
+      "Ready to Study serves students through counsellors in Sydney and Dhaka. The website brings those services and next steps into a single online experience."
+    ],
+    "role": [
+      "Used AI-assisted development tools to build and refine the Ready to Study website.",
+      "Implemented chatbot support and AI-assisted tools as part of the client delivery, alongside the website’s course, destination, service and enquiry experience.",
+      "Connected the client’s education services with clear paths for students to explore options and reach the team."
+    ],
+    "architecture": [
+      {
+        "title": "AI-assisted build",
+        "detail": "Implementation and iteration with AI-assisted tools"
+      },
+      {
+        "title": "Student website",
+        "detail": "Study destinations, services and course exploration"
+      },
+      {
+        "title": "Chatbot integration",
+        "detail": "Conversational support as part of the client solution"
+      },
+      {
+        "title": "Adviser enquiries",
+        "detail": "Contact and consultation pathways"
+      }
+    ],
+    "architectureNote": "Conceptual view of the delivery process and visitor journey. AI-assisted development describes the build workflow; chatbot integration is a separate solution capability.",
+    "challenge": {
+      "title": "Turning AI-assisted development into a clear student journey.",
+      "confirmed": false,
+      "paragraphs": [
+        "The delivery connects AI-assisted implementation with the practical information students need: destinations, courses, education services and ways to speak with an adviser.",
+        "Chatbot integration and AI-assisted tools support the broader client solution, alongside the website’s information and enquiry pathways."
+      ]
+    },
+    "results": [
+      {
+        "value": "Live",
+        "label": "education consultancy website"
+      },
+      {
+        "value": "Chatbot",
+        "label": "integrated support capability"
+      },
+      {
+        "value": "AI-assisted",
+        "label": "development and delivery"
+      }
+    ],
+    "resultNote": "The live website is available for inspection, including its study destinations, course exploration, education services and contact pathways.",
+    "links": [
+      {
+        "label": "Visit Ready to Study",
+        "href": "https://www.readytostudy.org/"
+      }
+    ],
+    "todos": [
+      "TODO: Add the specific AI development tools, chatbot provider, implementation stack and a client-approved delivery example."
+    ]
+  }
+]

@@ -23,7 +23,7 @@ export function ProjectsBrowser({ projects }: { projects: ProjectSummary[] }) {
           role="group"
           aria-label="Filter projects"
         >
-          {["All work", "University", "Industry", "Client"].map((option) => (
+          {["All work", "Industry", "Client", "University"].map((option) => (
             <button
               type="button"
               key={option}

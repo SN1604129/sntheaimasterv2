@@ -62,7 +62,7 @@ export const workPage = {
     end: "Used beyond a portfolio.",
     title: "Stix Eatery · Miranda, NSW",
     description:
-      "An online ordering, rewards/loyalty and admin platform for a real Sydney cafe.",
+      "AI-assisted development of an online ordering, rewards/loyalty and admin platform for a real Sydney cafe, with chatbot integration and AI-assisted tools.",
   },
   enquiry: {
     lead: "What would you",
